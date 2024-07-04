@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# JSON設定ファイル
+*.json
+
+# YAML設定ファイル
+*.yml
+
+# macOSアプリケーション関連ファイル
+info.plist
+
+# ビルド成果物
+main
+
+# その他
+*.csv
+.env
