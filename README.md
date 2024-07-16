@@ -28,7 +28,7 @@ Directions APIはルート案内や経路計算を提供するサービスです
 <br>
 <br>
 
-1. 1で取得した緯度経度情報を使用して、Raster Tiles APIへリクエストを送信します。レスポンスとして返される画像データを解析し、標高データを取得します。
+2. 1で取得した緯度経度情報を使用して、Raster Tiles APIへリクエストを送信します。レスポンスとして返される画像データを解析し、標高データを取得します。
 
 <br>
 <br>
@@ -38,7 +38,7 @@ Directions APIはルート案内や経路計算を提供するサービスです
 <br>
 <br>
 
-1. ここまでに得たデータを基にinput.csvを生成します。
+4. ここまでに得たデータを基にinput.csvを生成します。
 
 <br>
 <br>
@@ -47,9 +47,7 @@ Directions APIはルート案内や経路計算を提供するサービスです
 
 ### 事前準備
 
-1. このソフトの実行にはMapboxのaccess tokenが必要です。Mapboxのアカウントを作成してください。
-
-<br>
+1. このソフトの実行にはMapboxのaccess tokenが必要です。Mapboxのアカウントを作成してください。  
 
 * Mapboxアカウント作成ページ: <https://account.mapbox.com/auth/signup/>  
 
