@@ -1,21 +1,18 @@
 # RouteProfileExtractor
 
-Mapboxが提供しているDirections APIから取得したJSONファイルを基に、EnergyEstimator<link>用のinput.csvを生成します。  
+Mapboxが提供しているDirections APIから取得したJSONファイルを基にinput.csvを生成します。任意のルートの車速、勾配プロファイルを得ることを目的としており、input.csvの構成は「時間,車速,勾配」となっています。
 
-このソフトを使用するには無料のMapboxアカウントを作成し、API access tokenを取得する必要があります。
+尚、このソフトを使用するには無料のMapboxアカウントを作成し、API access tokenを取得する必要があります。
 
 <br>
 
 ## 概要
 
-Directions APIはルート案内や経路計算を提供するサービスです。  
-このソフトでは以下の手順でinput.csvを生成します。
+Directions APIはルート案内や経路計算を提供するサービスです。このソフトでは以下の手順でinput.csvを生成します。
 
 <br>
 
 1. Directions APIが返すJSONファイルを解析し以下のデータを抽出します。
-
-<br>
 
 | 項目        | 説明                       |
 |------------|---------------------------|
@@ -31,7 +28,7 @@ Directions APIはルート案内や経路計算を提供するサービスです
 <br>
 <br>
 
-2. 1で取得した緯度経度情報を使用して、Raster Tiles APIへリクエストを送信します。レスポンスとして返される画像データを解析し、標高データを取得します。
+1. 1で取得した緯度経度情報を使用して、Raster Tiles APIへリクエストを送信します。レスポンスとして返される画像データを解析し、標高データを取得します。
 
 <br>
 <br>
@@ -41,7 +38,7 @@ Directions APIはルート案内や経路計算を提供するサービスです
 <br>
 <br>
 
-4. ここまでに得たデータを基にEnergyEstimator入力用のinput.csvを生成します。
+1. ここまでに得たデータを基にinput.csvを生成します。
 
 <br>
 <br>
@@ -54,7 +51,7 @@ Directions APIはルート案内や経路計算を提供するサービスです
 
 <br>
 
-Mapboxアカウント作成ページ: <https://account.mapbox.com/auth/signup/>  
+* Mapboxアカウント作成ページ: <https://account.mapbox.com/auth/signup/>  
 
 <br>
 
@@ -78,16 +75,17 @@ API_KEY=YOUR_API_KEY
 * 「access token」に自分のAPIキーが設定されているか？
 * 「routing profile」がdrivingになっているか？
 * 「geometries」がgeojsonになっているか？
-* 「type of geometry」がfullになっているか？
-* 「annotations」で "distance" "duration" "speed" の3つにチェックが入っているか？
+* 「overview」がfullになっているか？
+* 「annotations」に "distance" "duration" "speed" の3つにチェックが入っているか？
 
 <br>
 
-3. 「coordinates」に出発地と到着地の座標情報[経度,緯度]を入力します。
+3. 「coordinates」に出発地と到着地の座標情報 [経度,緯度] を入力します。  
+※ 緯度,経度の順番ではないことに注意してください。
 
 <br>
 
-4. 地図画面を確認し、電力消費を求めたいルートが引けていることを確認してください。引けていない場合は「coordinates」に経由地を追加します。
+4. 地図画面を確認し、車速、勾配プロファイルを得たいルートが引けていることを確認してください。引けていない場合は「coordinates」に経由地を追加し調整します。
 
 <br>
 
