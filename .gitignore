@@ -1,4 +1,4 @@
-# macOS
+# macOS固有
 .DS_Store
 
 # JSON設定ファイル
@@ -28,3 +28,6 @@ main
 
 # samplesフォルダはサブフォルダのファイル含め無視しない
 !samples/**
+
+# samplesフォルダ内の.DS_Storeは無視
+samples/**/.DS_Store
