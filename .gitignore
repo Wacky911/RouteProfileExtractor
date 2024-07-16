@@ -16,3 +16,15 @@ main
 # その他
 *.csv
 .env
+
+# buildフォルダ内のすべてのファイルを無視
+/build/*
+
+# buildフォルダそのものは無視しない
+!build/
+
+# .gitkeepは無視しない
+!build/.gitkeep
+
+# samplesフォルダはサブフォルダのファイル含め無視しない
+!samples/**
